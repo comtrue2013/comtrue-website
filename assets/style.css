@@ -106,6 +106,23 @@ a  { color: var(--accent); }
   flex: none;
 }
 
+/* 檔案已列出但尚未開放下載 */
+.filelist .pending {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 11px 2px;
+  color: var(--fg-muted);
+}
+.filelist .pending .name { flex: 1 1 auto; }
+.filelist .pending .state {
+  font-size: .78rem;
+  white-space: nowrap;
+  color: var(--fg-muted);
+  opacity: .85;
+  flex: none;
+}
+
 .nav { display: flex; gap: 4px; flex-wrap: wrap; }
 .nav a {
   color: var(--fg-muted);
