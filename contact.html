@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — ComTrue Inc.</title>
-<meta name="description" content="Contact Comtrue Inc. (晨臻股份有限公司), Zhubei City, Hsinchu County, Taiwan — sales and technical support.">
+<meta name="description" content="Contact ComTrue Inc. (晨臻股份有限公司), Zhubei City, Hsinchu County, Taiwan — sales and technical support.">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -31,8 +31,8 @@
       <h1>Contact</h1>
       <p class="lead">
         Please feel free to email us — <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a>
-        for sales query, <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a>
-        for technical issue. Or use the form below.
+        for sales inquiries, or <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a>
+        for technical support. You can also prepare an email using the form below.
       </p>
     </div>
   </section>
@@ -61,8 +61,8 @@
             <div class="field">
               <label for="topic">Subject</label>
               <select id="topic" name="topic">
-                <option>Sales query</option>
-                <option>Technical issue</option>
+                <option>Sales inquiry</option>
+                <option>Technical support</option>
                 <option>Datasheet / documentation request</option>
                 <option>Other</option>
               </select>
@@ -76,13 +76,14 @@
             <!-- honeypot: 機器人會填，真人看不到 -->
             <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-            <button class="btn" type="submit" id="submit-btn">Send message</button>
+            <button class="btn" type="submit" id="submit-btn">Open email application</button>
 
             <div id="form-status" role="status" aria-live="polite"></div>
 
             <p class="form-note">
-              Submitting opens your email programme with the message ready to
-              send. You can also write to us directly at
+              This website does not send the form directly. The button opens
+              your default email application with a draft ready for your review
+              and submission. You can also write to us directly at
               <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a>.
             </p>
           </form>
@@ -90,22 +91,22 @@
 
         <aside>
           <div class="card" style="margin-bottom:20px">
-            <h3>Taiwan Headquarter</h3>
+            <h3>Taiwan Headquarters</h3>
             <dl class="dl">
-              <dt>Comtrue Inc. (晨臻股份有限公司)</dt>
+              <dt>ComTrue Inc. (晨臻股份有限公司)</dt>
               <dd>
                 2F-1, No. 10, Xianzheng 10th St., Zhubei City,<br>
                 Hsinchu County 302, Taiwan (R.O.C.)
               </dd>
-              <dd style="margin-top:4px">302 台灣新竹縣竹北市縣政十街 10 號 2F 之 1</dd>
+              <dd style="margin-top:4px">302 台灣新竹縣竹北市縣政十街 10 號 2樓之1</dd>
 
               <dt>Tel</dt>
               <dd><a href="tel:+88635588082">(886) 3 558-8082</a></dd>
 
               <dt>Email</dt>
               <dd>
-                <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a> — sales query<br>
-                <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a> — technical issue
+                <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a> — sales inquiries<br>
+                <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a> — technical support
               </dd>
             </dl>
           </div>
@@ -136,7 +137,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; <span id="yr">2026</span> Comtrue Inc. 晨臻股份有限公司</div>
+    <div>&copy; <span id="yr">2026</span> ComTrue Inc. 晨臻股份有限公司</div>
     <div>
       2F-1, No. 10, Xianzheng 10th St., Zhubei City, Hsinchu County 302, Taiwan
     </div>
@@ -212,7 +213,7 @@ form.addEventListener('submit', async (e) => {
     say(`Sorry, the message could not be sent. Please email us directly at ${MAIL_TO}.`, 'err');
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Send message';
+    btn.textContent = FORM_ENDPOINT ? 'Send message' : 'Open email application';
   }
 });
 </script>
