@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — ComTrue Inc.</title>
+<meta name="description" content="Contact Comtrue Inc. (晨臻股份有限公司), Zhubei City, Hsinchu County, Taiwan — sales and technical support.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="ComTrue Inc."></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom:36px">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Contact</h1>
+      <p class="lead">
+        Please feel free to email us — <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a>
+        for sales query, <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a>
+        for technical issue. Or use the form below.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="grid" style="grid-template-columns:minmax(300px,1.3fr) minmax(260px,1fr); align-items:start">
+
+        <div>
+          <form class="form" id="contact-form" method="POST">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" required maxlength="100" autocomplete="name">
+            </div>
+
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" maxlength="120" autocomplete="organization">
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required maxlength="150" autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="topic">Subject</label>
+              <select id="topic" name="topic">
+                <option>Sales query</option>
+                <option>Technical issue</option>
+                <option>Datasheet / documentation request</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required maxlength="4000"></textarea>
+            </div>
+
+            <!-- honeypot: 機器人會填，真人看不到 -->
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button class="btn" type="submit" id="submit-btn">Send message</button>
+
+            <div id="form-status" role="status" aria-live="polite"></div>
+
+            <p class="form-note">
+              Submitting opens your email programme with the message ready to
+              send. You can also write to us directly at
+              <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a>.
+            </p>
+          </form>
+        </div>
+
+        <aside>
+          <div class="card" style="margin-bottom:20px">
+            <h3>Taiwan Headquarter</h3>
+            <dl class="dl">
+              <dt>Comtrue Inc. (晨臻股份有限公司)</dt>
+              <dd>
+                2F-1, No. 10, Xianzheng 10th St., Zhubei City,<br>
+                Hsinchu County 302, Taiwan (R.O.C.)
+              </dd>
+              <dd style="margin-top:4px">302 台灣新竹縣竹北市縣政十街 10 號 2F 之 1</dd>
+
+              <dt>Tel</dt>
+              <dd><a href="tel:+88635588082">(886) 3 558-8082</a></dd>
+
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:Sales@comtrue-inc.com">Sales@comtrue-inc.com</a> — sales query<br>
+                <a href="mailto:Support@comtrue-inc.com">Support@comtrue-inc.com</a> — technical issue
+              </dd>
+            </dl>
+          </div>
+
+          <div class="card">
+            <h3>China Agent</h3>
+            <dl class="dl">
+              <dt>深圳市胜芯微科技有限公司</dt>
+              <dd>深圳市南山区平山一路 2-6 号云谷创新产业园 2 期 9 栋 318</dd>
+
+              <dt>電話</dt>
+              <dd><a href="tel:+8675526942619">0755-26942619</a></dd>
+
+              <dt>Email</dt>
+              <dd><a href="mailto:sales@ic-sz.com">sales@ic-sz.com</a></dd>
+
+              <dt>Website</dt>
+              <dd><a href="https://www.sxwtech.com" target="_blank" rel="noopener">www.sxwtech.com</a></dd>
+            </dl>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Comtrue Inc. 晨臻股份有限公司</div>
+    <div>
+      2F-1, No. 10, Xianzheng 10th St., Zhubei City, Hsinchu County 302, Taiwan
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ─────────────────────────────────────────────────────────────
+   表單送出方式 — 改這一行就好
+
+   ''                       ← 目前：開使用者的郵件軟體（GitHub Pages 用這個，
+                              因為 GitHub Pages 不能跑後端）
+   'https://formspree.io/f/xxxxxxx'  ← 接 Formspree（免費 50 封/月）
+   '/api/contact'           ← 搬到 Cloudflare Pages 後改這個，
+                              會走 functions/api/contact.js 直接寄信
+   ───────────────────────────────────────────────────────────── */
+const FORM_ENDPOINT = '';
+
+const MAIL_TO = 'Sales@comtrue-inc.com';
+
+const form   = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+const btn    = document.getElementById('submit-btn');
+
+const say = (msg, kind) => {
+  status.textContent = msg;
+  status.className = 'show ' + kind;
+};
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(form));
+  if (data.website) return;            // honeypot：機器人填了就靜靜忽略
+
+  // 沒有後端 → 用 mailto 把內容帶進使用者的郵件軟體
+  if (!FORM_ENDPOINT) {
+    const body = [
+      `Name: ${data.name}`,
+      `Company: ${data.company || '-'}`,
+      `Email: ${data.email}`,
+      '',
+      data.message
+    ].join('\n');
+
+    window.location.href =
+      `mailto:${MAIL_TO}?subject=${encodeURIComponent('[Website] ' + data.topic + ' — ' + data.name)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    say(`Your email programme should now open with the message ready to send. ` +
+        `If nothing happened, please email us directly at ${MAIL_TO}.`, 'ok');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  status.className = '';
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (!res.ok) throw new Error(await res.text());
+
+    form.reset();
+    say('Thank you — your message has been sent. We will reply shortly.', 'ok');
+  } catch (err) {
+    say(`Sorry, the message could not be sent. Please email us directly at ${MAIL_TO}.`, 'err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send message';
+  }
+});
+</script>
+</body>
+</html>
