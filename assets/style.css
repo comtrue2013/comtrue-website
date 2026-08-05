@@ -77,7 +77,7 @@ a  { color: var(--accent); }
   text-decoration: none;
   white-space: nowrap;
 }
-.brand span { color: var(--accent); }
+.brand span { color: var(--fg-muted); font-size: 1rem; font-weight: 400; letter-spacing: 0; }
 .brand { display: flex; align-items: center; gap: 11px; }
 .brand img { height: 30px; width: auto; display: block; }
 
